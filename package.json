@@ -1,9 +1,11 @@
 {
   "name": "@stilljs/apploader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Still.js Lib for integrating microservices to other Libraries/Frameworks (e.g. React)",
   "type": "module",
   "keywords": ["Still.js","Microfrontend","React"],
   "author": "Nakassony Bernardo",
-  "license": "MIT"
+  "license": "MIT",
+  "main": "index.js",
+  "types": "index.d.ts"
 }

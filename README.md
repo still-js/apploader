@@ -1,15 +1,11 @@
-# StillJS CLI
-This is the CLI tool for StillJS Framework
+# StillJS Apploader Lib
+Loads your Still.js App/Microfrontend to React, etc. 
 
-
-<div style="display:flex; justify-content: center">
-    <img src="https://github.com/still-js/core/blob/HEAD/@still/img/logo-no-bg.png" style="width: 5em;"/>
-</div>
 
 ## Microfrontend with Still.js Framework
 
-This is  Still.js package which provides the capabilities to Integrate Still.js Application as a Microfrontend
-to other applications which are developed in other Framewoks or Libraries (e.g. React, Vanilla HTML/CSS/JavaScript).
+This is Still.js package which provides the capabilities to integrate Still.js Application as a Microfrontend
+to other applications which are developed in other Framewoks or Libraries (e.g. React).
 
 <br>
 
