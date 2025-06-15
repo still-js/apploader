@@ -76,7 +76,7 @@ By creating a new instance os StillAppLoader, we can then specify the STILL_HOME
 import { useEffect } from 'react';
 import './App.css';
 import { RegularReactComponent } from "./components/RegularReactComponent";
-import { StillAppLoader } from '@stilljs/apploader/StillAppLoader';
+import { StillAppLoader } from '@stilljs/apploader';
 
 function App() {
 
