@@ -1,6 +1,7 @@
 class LoneAppParams {
   /** @type { { STILL_HOME } } */ env = { STILL_HOME: null };
-  /** @type { 'react'|'default'|'next' } */ container = null;  
+  /** @type { 'react'|'default'|'next' } */ container = null;
+  version = 'latest';
 }
 
 class StillLoneApp {
@@ -37,7 +38,7 @@ export class StillAppLoader {
       window.STILL_HOME = params.env.STILL_HOME;
       params.env.PATH_PREFIX ? window.STILL_HOME_PREXIF = params.env.PATH_PREFIX : '';
       const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/@stilljs/core@latest/@still/lone.js'; 
+      script.src = 'https://cdn.jsdelivr.net/npm/@stilljs/core@'+params.version+'/@still/lone.js'; 
       this.#script = script;
       return { load: () => this.load(), unload: () => this.unload() };
   }

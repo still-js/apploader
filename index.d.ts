@@ -5,6 +5,7 @@ export interface LoneAppParams {
 
     env: EnvTypes;
     container?: ContainerTypes;
+    version?: String
   
 }
   
