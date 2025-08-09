@@ -1,5 +1,6 @@
 type EnvTypes = { STILL_HOME, PATH_PREFIX? };
 type ContainerTypes = 'next'|'react'|'default';
+type OnEventTypes = 'load';
 
 export interface LoneAppParams {
 
@@ -34,5 +35,7 @@ export class StillAppLoader {
     load(): void;
 
     unload(): void;
+
+    on(evt: OnEventTypes, cb): void;
 
 }
