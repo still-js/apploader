@@ -23,8 +23,8 @@ export class StillAppLoader {
     if(Object.keys(params).length > 0)
       this.#params = params;
     if(!('stillFrontendsList' in window)){
-      window['stillFrontendsList'] = {};
-      window['stillFrontendsLoader'] = {};
+      window['stillFrontendsList'] = {}, window['stillFrontendsLoader'] = {},
+      window['#stOnEvt'] = [];
     }
     window['stillFrontendsLoader'][this.#id] = {};
   }
@@ -33,11 +33,11 @@ export class StillAppLoader {
    * @param { LoneAppParams } params
    * @returns { StillLoneApp } 
    */
-  cdn = (params = {}) => {
+  cdn = (params = { version: 'latest' }) => {
       if(this.#params?.env.STILL_HOME) params.env.STILL_HOME;
       window.STILL_HOME = params.env.STILL_HOME;
       params.env.PATH_PREFIX ? window.STILL_HOME_PREXIF = params.env.PATH_PREFIX : '';
-      const script = document.createElement('script');
+      const script = document.createElement('script'); 
       script.src = 'https://cdn.jsdelivr.net/npm/@stilljs/core@'+params.version+'/@still/lone.js'; 
       this.#script = script;
       return { load: () => this.load(), unload: () => this.unload() };
@@ -50,9 +50,10 @@ export class StillAppLoader {
   local = (params = {}) => {
       if(this.#params?.env.STILL_HOME) params.env.STILL_HOME;
       window.STILL_HOME = params.env.STILL_HOME;
-      params.env.PATH_PREFIX ? window.STILL_HOME_PREXIF = params.env.PATH_PREFIX : '';
+      window.STILL_HOME_LOCAL = params.env.PATH_PREFIX ? params.env.PATH_PREFIX : '';
+      
       const script = document.createElement('script');
-      script.src = params.env.PATH_PREFIX + window.STILL_HOME + '@still/lone.js';
+      script.src = window.STILL_HOME + '@still/lone.js';
       this.#script = script;
       return { load: () => this.load(), unload: () => this.unload() };
   }
@@ -77,6 +78,10 @@ export class StillAppLoader {
         }
         return this;
     }
+  }
+
+  on(evt, cb){
+    if(evt === 'load' ) window['#stOnEvt'].push(cb);
   }
 
 }
