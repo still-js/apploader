@@ -14,8 +14,7 @@ export class StillAppLoader {
   #script;
   /** @type { LoneAppParams } */
   #params;
-  /** @type { Array<Object> } */
-  #components = [];
+  
   #id = `${new Date().getTime()}-${Math.random().toString().slice(2)}`;
 
   /** @param { LoneAppParams } params */
