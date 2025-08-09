@@ -1,6 +1,6 @@
 {
   "name": "@stilljs/apploader",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Still.js Lib for integrating microservices to other Libraries/Frameworks (e.g. React)",
   "type": "module",
   "keywords": ["Still.js","Microfrontend","React"],
